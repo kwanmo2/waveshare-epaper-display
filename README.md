@@ -1,3 +1,20 @@
+# Fork Project
+
+## Product I used.
+- Raspberry pi4 4GB
+- waveshare epaper 7in5b_HD(Black, Red color)
+
+## Modification
+- modified some code for epd_7in5b_HD product(connect different library and change resolution of image)
+- using exchangelib, it can support to fetch exchange calendar and mail data.
+- modified SVG file for displaying subject of email, making font size smaller, adjusting location of each item. 
+
+## Example
+
+
+----------------------------------------------------------------------------------------------
+
+
 Instructions on setting up a Raspberry Pi Zero WH with a Waveshare ePaper 7.5 Inch HAT. 
 The screen will display date, time, weather icon with high and low, and calendar entries.
 
