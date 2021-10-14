@@ -951,7 +951,7 @@
     <text id="temphighlow" x="155" y="390" font-size="38px" style="font-size:28px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:middle">WEATHER_DESC_1</text>
     <text id="temphighlow" x="155" y="415" font-size="38px" style="font-size:28px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:middle">WEATHER_DESC_2</text>
     <path d="m 301.08466,394.8254 v 70 h 3 v -235.5 h -3 z" id="divider" inkscape:connector-curvature="0" />
-
+    <path d="m 301.8466,100.8254 v 70 h 3 v -235.5 h -3 z" id="divider" inkscape:connector-curvature="0" />
 
 
 
@@ -961,32 +961,38 @@
         <path style="fill:#090509" d="m 397.281,132.088 c 8.74,0 15.891,-7.119 15.891,-15.891 V 15.891 C 413.172,7.119 406.021,0 397.281,0 388.541,0 381.39,7.119 381.39,15.891 v 100.306 c 0,8.772 7.151,15.891 15.891,15.891 z" id="path136" inkscape:connector-curvature="0" />
     </g>
 
-    <text id="calendarentry1" x="330" y="255" font-size="29px" style="font-size:29px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
-        <tspan x="330" dy="25" style="font-size:23px;">CAL_DATETIME_1</tspan>
+    <text id="calendarentry1" x="330" y="255" font-size="18px" style="font-size:20px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
+        <tspan x="330" dy="25" style="font-size:17px;">CAL_DATETIME_1</tspan>
         <tspan style="font-weight:bold;" x="330" dy="25">CAL_DESC_1</tspan>
     </text>
 
-    <text id="calendarentry2" x="330" y="305" font-size="29px" style="font-size:29px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
-        <tspan x="330" dy="25" style="font-size:23px;">CAL_DATETIME_2</tspan>
+    <text id="calendarentry2" x="330" y="305" font-size="18px" style="font-size:20px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
+        <tspan x="330" dy="25" style="font-size:17px;">CAL_DATETIME_2</tspan>
         <tspan style="font-weight:bold;" x="330" dy="25">CAL_DESC_2</tspan>
     </text>
 
-    <text id="calendarentry3" x="330" y="355" font-size="29px" style="font-size:29px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
-        <tspan x="330" dy="25" style="font-size:23px;">CAL_DATETIME_3</tspan>
+    <text id="calendarentry3" x="330" y="355" font-size="18px" style="font-size:20px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
+        <tspan x="330" dy="25" style="font-size:17px;">CAL_DATETIME_3</tspan>
         <tspan style="font-weight:bold;" x="330" dy="25">CAL_DESC_3</tspan>
     </text>
 
-    <text id="calendarentry4" x="330" y="405" font-size="29px" style="font-size:29px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
-        <tspan x="330" dy="25" style="font-size:23px;">CAL_DATETIME_4</tspan>
+    <text id="calendarentry4" x="330" y="405" font-size="18px" style="font-size:20px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">
+        <tspan x="330" dy="25" style="font-size:17px;">CAL_DATETIME_4</tspan>
         <tspan style="font-weight:bold;" x="330" dy="25">CAL_DESC_4</tspan>
     </text>
 
 
-    <text id="textday" x="600" y="75" style="text-anchor:middle;font-weight:600;font-size:47px;line-height:0%;font-family:'Nimbus Sans L';">DAY_NAME</text>
+    <text id="textday" x="10" y="110" style="text-anchor:left;font-weight:600;font-size:50px;line-height:0%;font-family:'Nimbus Sans L';">DAY_NAME</text>
 
-    <text id="textdate" x="600" y="130" style="text-anchor:middle;font-size:40px;line-height:0%;font-family:'Nimbus Sans L';">DAY_ONE</text>
+    <text id="textdate" x="10" y="150" style="text-anchor:left;font-size:40px;line-height:0%;font-family:'Nimbus Sans L';">DAY_ONE</text>
 
-    <text id="texttime" x="30" y="125" font-size="100px" style="font-weight:bold;font-size:100px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">TIME_NOW</text>
+    <text id="texttime" x="10" y="50" font-size="10px" style="font-weight:bold;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';text-anchor:beginning">TIME_NOW</text>
+    
+    <text id="textmail" x="310" y="30" style="text-anchor:left;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';">MAIL_1</text>
+    <text id="textmail" x="310" y="60" style="text-anchor:left;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';">MAIL_2</text>
+    <text id="textmail" x="310" y="90" style="text-anchor:left;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';">MAIL_3</text>
+    <text id="textmail" x="310" y="120" style="text-anchor:left;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';">MAIL_4</text>
+    <text id="textmail" x="310" y="150" style="text-anchor:left;font-size:20px;line-height:0%;font-family:'Nimbus Sans L';">MAIL_5</text>
 
 </svg>
 

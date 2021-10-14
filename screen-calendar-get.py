@@ -4,6 +4,11 @@ import pickle
 import os.path
 import os
 import logging
+from exchangelib import Credentials, Account, CalendarItem, Mailbox, Message
+from exchangelib import items
+from exchangelib.items import item
+from datetime import timedelta
+
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
@@ -14,12 +19,14 @@ configure_logging()
 
 # note: increasing this will require updates to the SVG template to accommodate more events
 max_event_results = 4
+credentials = Credentials('Exchange ID', 'Exchange PW')
+account = Account('Exchange ID', credentials=credentials, autodiscover=True)
 
 google_calendar_id = os.getenv("GOOGLE_CALENDAR_ID", "primary")
 outlook_calendar_id = os.getenv("OUTLOOK_CALENDAR_ID", None)
 
 ttl = float(os.getenv("CALENDAR_TTL", 1 * 60 * 60))
-
+MaxCount = 5
 
 def get_outlook_events(max_event_results):
 
@@ -30,6 +37,11 @@ def get_outlook_events(max_event_results):
         now_iso = datetime.datetime.now().astimezone().replace(microsecond=0).isoformat()
         oneyearlater_iso = (datetime.datetime.now().astimezone()
                             + datetime.timedelta(days=365)).astimezone().isoformat()
+        
+        calendar_item =[]
+
+        
+        
         access_token = outlook_util.get_access_token()
         events_data = outlook_util.get_outlook_calendar_events(
                                                                 outlook_calendar_id,
@@ -151,10 +163,37 @@ def get_google_datetime_formatted(event_start):
     return day
 
 
+#def get_exchange_events(max_event_results):
+
+def get_output_dict_from_exchange_events(MaxCount):
+    
+    ##Get email from exchange account
+    ttime = datetime.datetime.now()
+    formatted_events= {}
+    i = 0
+    for item in account.inbox.filter(is_read=False).order_by('-datetime_received')[:5]:
+      event_label_id = str(i+1)
+      formatted_events['MAIL_'+event_label_id] = str(item.subject)
+      i=i+1
+    
+    ##Get calendar from exchange account
+    i = 0
+    items = account.calendar.view(start=datetime.datetime(ttime.year, ttime.month, ttime.day, tzinfo=account.default_timezone),
+        end=datetime.datetime(ttime.year, ttime.month, ttime.day, tzinfo=account.default_timezone) + datetime.timedelta(days=7))
+    for item in items:
+      event_label_id = str(i+1)
+      formatted_events['CAL_DATETIME_' + event_label_id] = str(item.start+timedelta(hours=9)).split('+')[0][0:16]
+      formatted_events['CAL_DESC_' + event_label_id] = str(item.subject)
+      i=i+1
+    i=0
+    
+    return formatted_events
+
+
 def main():
 
     output_svg_filename = 'screen-output-weather.svg'
-
+    """
     if outlook_calendar_id:
         logging.info("Fetching Outlook Calendar Events")
         outlook_events = get_outlook_events(max_event_results)
@@ -164,7 +203,10 @@ def main():
         logging.info("Fetching Google Calendar Events")
         google_events = get_google_events(max_event_results)
         output_dict = get_output_dict_from_google_events(google_events, max_event_results)
-
+    """
+    output_dict = get_output_dict_from_exchange_events(MaxCount)
+    logging.info("Fetching Exchange Calendar Events")
+    
     logging.info("main() - {}".format(output_dict))
 
     logging.info("Updating SVG")
